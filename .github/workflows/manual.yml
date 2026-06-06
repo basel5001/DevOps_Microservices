@@ -17,10 +17,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@master
+      uses: actions/checkout@v4
 
     - name: Login
-      uses: atlassian/gajira-login@master
+      uses: atlassian/gajira-login@v3
       env:
         JIRA_BASE_URL: ${{ secrets.JIRA_BASE_URL }}
         JIRA_USER_EMAIL: ${{ secrets.JIRA_USER_EMAIL }}
@@ -28,7 +28,7 @@ jobs:
         
     - name: Create NEW JIRA ticket
       id: create
-      uses: atlassian/gajira-create@master
+      uses: atlassian/gajira-create@v3
       with:
         project: CONUPDATE
         issuetype: Task
